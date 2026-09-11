@@ -1,0 +1,211 @@
+:root {
+  --page-background: #22c55e;
+  --heading-color: #18231d;
+  --birthday-color: #15803d;
+  --content-width: 42rem;
+  --page-padding: 1.5rem;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: var(--heading-color);
+  background: var(--page-background);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--page-padding);
+  background: var(--page-background);
+}
+
+.floating-character,
+.floating-cat,
+.floating-netflix {
+  position: fixed;
+  z-index: 0;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.floating-character {
+  width: clamp(5.5rem, 14vw, 9.5rem);
+  animation: wander-character 24s ease-in-out infinite alternate;
+}
+
+.floating-cat {
+  width: 5.5rem;
+  max-width: 5.5rem !important;
+  max-height: 8rem;
+  object-fit: contain;
+  border: 0.2rem solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0.75rem 1.5rem rgb(24 35 29 / 20%);
+  animation: wander-cat 28s ease-in-out infinite alternate;
+}
+
+.floating-netflix {
+  width: 5.5rem;
+  max-width: 5.5rem !important;
+  max-height: 8rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0.75rem 1rem rgb(24 35 29 / 20%));
+  animation: wander-netflix 26s ease-in-out infinite alternate;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  width: min(100%, var(--content-width));
+  padding: clamp(2rem, 8vw, 4rem);
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #dce8df;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.5rem rgb(24 35 29 / 8%);
+}
+
+h1 {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.birthday {
+  margin: 1rem 0 0;
+  color: var(--birthday-color);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.birthday a {
+  color: inherit;
+}
+
+@keyframes wander-character {
+  0% {
+    top: 6vh;
+    left: 5vw;
+    transform: rotate(-4deg);
+  }
+
+  25% {
+    top: 66vh;
+    left: 76vw;
+    transform: rotate(5deg);
+  }
+
+  50% {
+    top: 70vh;
+    left: 8vw;
+    transform: rotate(-2deg);
+  }
+
+  75% {
+    top: 10vh;
+    left: 78vw;
+    transform: rotate(4deg);
+  }
+
+  100% {
+    top: 42vh;
+    left: 42vw;
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes wander-cat {
+  0% {
+    top: 72vh;
+    left: 78vw;
+    transform: rotate(4deg);
+  }
+
+  25% {
+    top: 8vh;
+    left: 72vw;
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    top: 12vh;
+    left: 8vw;
+    transform: rotate(3deg);
+  }
+
+  75% {
+    top: 68vh;
+    left: 12vw;
+    transform: rotate(-4deg);
+  }
+
+  100% {
+    top: 38vh;
+    left: 68vw;
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes wander-netflix {
+  0% {
+    top: 14vh;
+    left: 44vw;
+    transform: rotate(-4deg);
+  }
+
+  25% {
+    top: 68vh;
+    left: 44vw;
+    transform: rotate(4deg);
+  }
+
+  50% {
+    top: 36vh;
+    left: 6vw;
+    transform: rotate(-3deg);
+  }
+
+  75% {
+    top: 36vh;
+    left: 86vw;
+    transform: rotate(3deg);
+  }
+
+  100% {
+    top: 10vh;
+    left: 44vw;
+    transform: rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-character,
+  .floating-cat,
+  .floating-netflix {
+    animation: none;
+  }
+
+  .floating-character {
+    top: 6vh;
+    left: 5vw;
+  }
+
+  .floating-cat {
+    top: 72vh;
+    left: 78vw;
+  }
+
+  .floating-netflix {
+    top: 14vh;
+    left: 44vw;
+  }
+}
