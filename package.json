@@ -1,0 +1,13 @@
+{
+  "name": "mohammed-albayati",
+  "version": "1.0.0",
+  "description": "Personal webpage featuring floating animated characters and images.",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "node -e \"console.log('Build complete')\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

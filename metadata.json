@@ -1,0 +1,8 @@
+{
+  "name": "Mohammed Albayati",
+  "description": "Personal webpage featuring floating animated characters and images.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
